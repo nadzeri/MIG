@@ -53,14 +53,18 @@
     <div class="container">
 
       <form class="form-signin">
-        <h2 class="form-signin-heading">cabang</h2>
-        <input type="text" class="form-control" placeholder="Nama cabang">
-        <input type="password" class="form-control" placeholder="Provinsi">
-        <input type="password" class="form-control" placeholder="Kota">
-        <input type="password" class="form-control" placeholder="Alamat">
-        <input type="password" class="form-control" placeholder="Kontak">
+        <h2 class="form-signin-heading">Delivery Order</h2>
+        <input type="text" class="form-control" placeholder="Nomer DO">
+        <input type="date" class="form-control" >
+        <input type="date" class="form-control">
+        <input type="text" class="form-control" placeholder="mata uang">
+        <input type="text" class="form-control" placeholder="Nama Cabang">
+        <input type="text" class="form-control" placeholder="User/Bagian">
+        <input type="text" class="form-control" placeholder="Jumlah"> 
+        <input type="text" class="form-control" placeholder="PIC">
+        <input type="text" class="form-control" placeholder="Keterangan">       
         
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Daftarkan</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
       </form>
 
     </div> <!-- /container -->
