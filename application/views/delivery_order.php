@@ -47,25 +47,49 @@
         border-top-left-radius: 0;
         border-top-right-radius: 0;
       }
+      .form-signin h2
+      {
+        text-align: center;
+      }
+
+      #cabang
+      {
+        visibility: hidden;
+      }
+
+      #cabang:target
+      {
+        visibility: visible;
+      }
     </style>
   </head>
   <body>
     <div class="container">
 
-      <form class="form-signin">
+      <form class="form-signin" method="POST">
         <h2 class="form-signin-heading">Delivery Order</h2>
-        <input type="text" class="form-control" placeholder="Nomer DO">
-        <input type="date" class="form-control" >
-        <input type="date" class="form-control">
-        <input type="text" class="form-control" placeholder="mata uang">
-        <input type="text" class="form-control" placeholder="Nama Cabang">
-        <input type="text" class="form-control" placeholder="User/Bagian">
-        <input type="text" class="form-control" placeholder="Jumlah"> 
-        <input type="text" class="form-control" placeholder="PIC">
-        <input type="text" class="form-control" placeholder="Keterangan">       
-        
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+        Nomor Delivery Order :
+        <input type="text" class="form-control" placeholder="Nomer Delivery Order">
+        Tanggal Sewa :
+        <input type="date" class="form-control" placeholder="Tanggal Sewa">
+        Tanggal Kirim :
+        <input type="date" class="form-control" placeholder="Tanggal Kirim">
+        Mata Uang :
+        <select class="form-control">
+          <option value="Rupiah">Rupiah</option>
+          <option value="Dollar">Dollar</option>
+        </select><br/>
+        <a href="#cabang" class="btn btn-lg btn-primary btn-block">Lanjutkan</a>
+        <div id="cabang"><br/>
+          Nama Cabang :
+          <input type="text" class="form-control" placeholder="Nama Cabang">
+          <!--input type="text" class="form-control" placeholder="User/Bagian">
+          <input type="text" class="form-control" placeholder="Jumlah"> 
+          <input type="text" class="form-control" placeholder="PIC">
+          <input type="text" class="form-control" placeholder="Keterangan"-->    
+        </div>  
       </form>
+
 
     </div> <!-- /container -->
 
