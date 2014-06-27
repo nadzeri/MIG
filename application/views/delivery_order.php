@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Sign In</title>
+    <title>Delivery Order</title>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" type="text/javascript"></script>
@@ -51,45 +51,43 @@
       {
         text-align: center;
       }
-
-      #cabang
-      {
-        visibility: hidden;
-      }
-
-      #cabang:target
-      {
-        visibility: visible;
-      }
     </style>
     <script language="Javascript" type="text/javascript">
       var counter = 1;
       var limit = 25;
       function addInput(divName){
            if (counter == limit)  {
-                alert("Tidak Bisa! Sudah melebihi batas tambah");
+                alert("Maksimal 25 cabang!");
            }
            else {
-                var newdiv = document.createElement('div');
-                var t1 = "<div id='hapus" + counter + "'>Tambah Komputer " + (counter + 1) + " <br><br/>";
-                var t2 = "<div class='ui-widget'><label for='Lantai'>Lantai : </label><input id='Lantai' name='Lantai[]'></div><br/>";
-                var t3 = "<div class='ui-widget'><label for='Nama_UnitKerja'>Unit Kerja : </label><input id='Nama_UnitKerja' name='Nama_UnitKerja[]'></div><br/>";
-                var t4 = "<label>No. PC : </label><input type='text' name='No_PC[]'><br/><br/><label>OS : </label><br/><input type='radio' name='OS" + counter + "' value='Windows 7'>Windows 7<input type='radio' name='OS" + counter + "' value='Windows 8'>Windows 8<input type='radio' name='OS" + counter + "' value='Windows XP'>Windows XP<input type='radio' name='OS" + counter + "' value='Linux'>Linux<br/><br/>";
-                var t5 = "<label>Original : </label><br/><input type='radio' name='Ori" + counter + "' value='Ya'>Ya<input type='radio' name='Ori" + counter + "' value='Tidak'>Tidak<br/><br/><label>COA : </label><br/><input type='radio' name='COA" + counter + "' value='Ya'>Ya<input type='radio' name='COA" + counter + "' value='Tidak'>Tidak<br/><br/><label>Keterangan : </label><br/><textarea rows='4' cols='50' name='Keterangan[]'></textarea><br/><br/></div></div>";
-                newdiv.innerHTML = t1 + t2 + t3 + t4 + t5;
-                document.getElementById(divName).appendChild(newdiv);
+                if(counter == 1)
+                {
+                  var submit="<button id=\"submitCabang\" type=\"button\" class=\"btn btn-lg btn-primary btn-block\" onClick=\"\">Lanjut</button>";
+                  var title="<h2 id=\"titleCabang\" class=\"form-signin-heading\">Masukkan Cabang</h2>";
+                  $('form button').remove();
+                  $(title).insertAfter('form br');
+                  $('form').append(submit);
+                }
+                var t1 = "<div id='cabang" + (counter-1) +"'>";
+                var t2 = "Nama Cabang :<input type='text' class='form-control' placeholder='Nama Cabang' name='cabang[]'>";
+                var t3 = "<button type='button' onClick=\"addInput('cabang" + (counter-1) +"');\"><img src='<?= base_url()?>../assets/gambar/addIcon.png' height='20px'></button><button type='button' onClick=\"removeInput('cabang" + (counter-1) +"');\"><img src='<?= base_url()?>../assets/gambar/deleteIcon.png' height='20px'></button><br/><br/></div>";
+                var element = t1+t2+t3;
+                $(element).insertAfter('#' + divName);
                 counter++;
            }
       }
       function removeInput(divName){
             if(counter>1)
             {
+                if(counter==2)
+                {
+                  var element = "<button type=\"button\" class=\"btn btn-lg btn-primary btn-block\" onClick=\"addInput('cabang');\">Lanjut</button>";
+                  $(element).insertAfter('form br');
+                  $('#titleCabang').remove();
+                  $('#submitCabang').remove();
+                }
                 counter--;
-                var index = "hapus" + counter;
-                var parent = document.getElementById(divName);
-                var child = document.getElementById(index);
-                child.parentNode.removeChild(child);
-
+                $('#' + divName).remove();
            }
            else
            {
@@ -100,33 +98,23 @@
   </head>
   <body>
     <div class="container">
-
-      <form class="form-signin" method="POST">
+      <form class="form-signin" method="POST" action="<?= base_url()?>deliveryOrder/">
         <h2 class="form-signin-heading">Delivery Order</h2>
         Nomor Delivery Order :
-        <input type="text" class="form-control" placeholder="Nomer Delivery Order">
+        <input type="text" class="form-control" placeholder="Nomer Delivery Order" name="NO_DO">
         Tanggal Sewa :
-        <input type="date" class="form-control" placeholder="Tanggal Sewa">
+        <input type="date" class="form-control" placeholder="Tanggal Sewa" name="TGL_SEWA">
         Tanggal Kirim :
-        <input type="date" class="form-control" placeholder="Tanggal Kirim">
+        <input type="date" class="form-control" placeholder="Tanggal Kirim" name="TGL_KIRIM">
         Mata Uang :
-        <select class="form-control">
+        <select class="form-control" name="MATA_UANG">
           <option value="Rupiah">Rupiah</option>
           <option value="Dollar">Dollar</option>
-        </select><br/>
-        <button class="btn btn-lg btn-primary btn-block" onClick="addInput('cabang');">Lanjutkan</button>
-        <div id="cabang"><br/>
-          Nama Cabang :
-          <input type="text" class="form-control" placeholder="Nama Cabang">
-          <!--input type="text" class="form-control" placeholder="User/Bagian">
-          <input type="text" class="form-control" placeholder="Jumlah"> 
-          <input type="text" class="form-control" placeholder="PIC">
-          <input type="text" class="form-control" placeholder="Keterangan"-->    
-        </div>  
+        </select><br>
+        <button type="button" class="btn btn-lg btn-primary btn-block" onClick="addInput('cabang');">Lanjut</button>
+        <div id="cabang">
+        </div>
       </form>
-
-
     </div> <!-- /container -->
-
   </body>
 </html>
