@@ -11,6 +11,7 @@ class User extends CI_Controller {
 	public function index()
 		{
 			$this->load->view('header/header');
+			$this->load->view('user/sigin');
 			$this->load->view('footer/footer');
 		}
 }

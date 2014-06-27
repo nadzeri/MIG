@@ -11,7 +11,7 @@
 	<nav class="navbar navbar" role="navigation" style = "height : 70px; border: blue; ">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
-	      <a class="navbar-brand" href="#" style = "color : white; margin-top: 10px;"><strong>Mitramas Infosys Global System</strong></a>
+	      <a class="navbar-brand" href="<?= base_url('user')?>" style = "color : #292421; margin-top: 10px;"><strong>Mitramas Infosys Global System</strong></a>
 	    </div>
 	  </div>
 	</nav>
