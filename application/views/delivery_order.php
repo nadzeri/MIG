@@ -62,6 +62,41 @@
         visibility: visible;
       }
     </style>
+    <script language="Javascript" type="text/javascript">
+      var counter = 1;
+      var limit = 25;
+      function addInput(divName){
+           if (counter == limit)  {
+                alert("Tidak Bisa! Sudah melebihi batas tambah");
+           }
+           else {
+                var newdiv = document.createElement('div');
+                var t1 = "<div id='hapus" + counter + "'>Tambah Komputer " + (counter + 1) + " <br><br/>";
+                var t2 = "<div class='ui-widget'><label for='Lantai'>Lantai : </label><input id='Lantai' name='Lantai[]'></div><br/>";
+                var t3 = "<div class='ui-widget'><label for='Nama_UnitKerja'>Unit Kerja : </label><input id='Nama_UnitKerja' name='Nama_UnitKerja[]'></div><br/>";
+                var t4 = "<label>No. PC : </label><input type='text' name='No_PC[]'><br/><br/><label>OS : </label><br/><input type='radio' name='OS" + counter + "' value='Windows 7'>Windows 7<input type='radio' name='OS" + counter + "' value='Windows 8'>Windows 8<input type='radio' name='OS" + counter + "' value='Windows XP'>Windows XP<input type='radio' name='OS" + counter + "' value='Linux'>Linux<br/><br/>";
+                var t5 = "<label>Original : </label><br/><input type='radio' name='Ori" + counter + "' value='Ya'>Ya<input type='radio' name='Ori" + counter + "' value='Tidak'>Tidak<br/><br/><label>COA : </label><br/><input type='radio' name='COA" + counter + "' value='Ya'>Ya<input type='radio' name='COA" + counter + "' value='Tidak'>Tidak<br/><br/><label>Keterangan : </label><br/><textarea rows='4' cols='50' name='Keterangan[]'></textarea><br/><br/></div></div>";
+                newdiv.innerHTML = t1 + t2 + t3 + t4 + t5;
+                document.getElementById(divName).appendChild(newdiv);
+                counter++;
+           }
+      }
+      function removeInput(divName){
+            if(counter>1)
+            {
+                counter--;
+                var index = "hapus" + counter;
+                var parent = document.getElementById(divName);
+                var child = document.getElementById(index);
+                child.parentNode.removeChild(child);
+
+           }
+           else
+           {
+                alert("Satu-satunya data tidak bisa dihapus!");
+           }
+      }
+  </script>
   </head>
   <body>
     <div class="container">
@@ -79,7 +114,7 @@
           <option value="Rupiah">Rupiah</option>
           <option value="Dollar">Dollar</option>
         </select><br/>
-        <a href="#cabang" class="btn btn-lg btn-primary btn-block">Lanjutkan</a>
+        <button class="btn btn-lg btn-primary btn-block" onClick="addInput('cabang');">Lanjutkan</button>
         <div id="cabang"><br/>
           Nama Cabang :
           <input type="text" class="form-control" placeholder="Nama Cabang">
