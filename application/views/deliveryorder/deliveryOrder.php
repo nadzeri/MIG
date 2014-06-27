@@ -62,7 +62,7 @@
            else {
                 if(counter == 1)
                 {
-                  var submit="<button id=\"submitCabang\" type=\"button\" class=\"btn btn-lg btn-primary btn-block\" onClick=\"\">Lanjut</button>";
+                  var submit="<button id=\"submitCabang\" class=\"btn btn-lg btn-primary btn-block\">Lanjut</button>";
                   var title="<h2 id=\"titleCabang\" class=\"form-signin-heading\">Masukkan Cabang</h2>";
                   $('form button').remove();
                   $(title).insertAfter('form br');
@@ -98,7 +98,7 @@
   </head>
   <body>
     <div class="container">
-      <form class="form-signin" method="POST" action="<?= base_url()?>deliveryOrder/">
+      <form class="form-signin" method="POST" action="<?= base_url()?>deliveryOrder/tambahDeliveryOrder">
         <h2 class="form-signin-heading">Delivery Order</h2>
         Nomor Delivery Order :
         <input type="text" class="form-control" placeholder="Nomer Delivery Order" name="NO_DO">
