@@ -12,15 +12,20 @@ class Komputer extends CI_Controller {
 	public function index($success = false)
 		{
 			$data['success'] = $success;
-			$this->load->view('komputer/tambahKomputer',$data);
+			$this->load->view('komputer/tambahSpesifikasi',$data);
 		}
 
 	public function tambahKomputer()
 		{
+			$data['data'] =  $this->komputer_model->get_spesifikasi();
+			$this->load->view('komputer/tambahKomputer',$data);
+
+		}
+	public function tambahSpesifikasi()
+		{
 
 			$data['Merk'] = $this->input->post('Merk');
 			$data['Type'] = $this->input->post('Type');
-			$Jumlah = $this->input->post('Jumlah');
 			$data['Chipset'] = $this->input->post('Chipset');
 			$data['Processor'] = $this->input->post('Processor');
 			$data['Memory'] = $this->input->post('Memory');
@@ -34,7 +39,7 @@ class Komputer extends CI_Controller {
 			$data['Keyboard'] = $this->input->post('Keyboard');
 			$data['Porting_Device'] = $this->input->post('Porting_Device');
 			$data['Operating_System'] = $this->input->post('Operating_System');
-			$this->komputer_model->tambah($data,$Jumlah);
+			$this->komputer_model->tambahSpesifikasi($data);
 			$success = true;
 			$this->index($success);
 		}

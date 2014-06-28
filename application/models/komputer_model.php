@@ -1,21 +1,20 @@
 <?php
 	class komputer_model extends CI_Model
 	{
-		function __construct()
+		public function __construct()
 		{
 			parent::__construct();
 			$this->load->database();
 		}
 
-
-
-		public function tambah($data,$Jumlah)
+		public function tambahSpesifikasi($data)
 		{
-
-			for ($a=1;$a<$Jumlah;$a++)
-			{$this->db->insert('komputer',$data);}
-			
+			$this->db->insert('spesifikasi',$data);
 		}
 
-
+		public function get_spesifikasi()
+		{
+			$query = $this->db->get('spesifikasi');
+			return $query->result();
+		}
 	}
