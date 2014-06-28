@@ -41,6 +41,6 @@ class Komputer extends CI_Controller {
 			$data['Operating_System'] = $this->input->post('Operating_System');
 			$this->komputer_model->tambahSpesifikasi($data);
 			$success = true;
-			$this->index($success);
+			//$this->index($success);
 		}
 }
