@@ -7,7 +7,7 @@
 	<link type="text/css" rel = "stylesheet" href="<?= base_url()?>../assets/style.css"></link>
 </head>
 
-<body>
+<body style = "background-color: #EEE9E9;">
 	<nav class="navbar navbar" role="navigation" style = "height : 70px; border: blue; ">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
