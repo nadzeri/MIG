@@ -9,17 +9,17 @@ class DeliveryOrder extends CI_Controller {
 	}
 	public function index()
 	{
-		$this->load->view('deliveryorder/deliveryOrder');
+		$this->load->view('deliveryorder/deliveryorder');
 	}
 	public function tambahDeliveryOrder()
 	{
-		$data['NO_DO'] = $this->input->post('NO_DO');
-		$data['TGL_SEWA'] = $this->input->post('TGL_SEWA');
-		$data['TGL_KIRIM'] = $this->input->post('TGL_KIRIM');
-		$data['MATA_UANG'] = $this->input->post('MATA_UANG');
+		$data['NO_DO'] = $this->input->get('NO_DO');
+		$data['TGL_SEWA'] = $this->input->get('TGL_SEWA');
+		$data['TGL_KIRIM'] = $this->input->get('TGL_KIRIM');
+		$data['MATA_UANG'] = $this->input->get('MATA_UANG');
 		//$this->deliveryorder_model->tambah($data);
-		$data['cabang'] = $this->input->post('cabang');
-		$this->load->view('deliveryorder/detailDeliveryOrder',$data);
+		$data['cabang'] = $this->input->get('cabang');
+		$this->load->view('deliveryorder/detaildeliveryorder',$data);
 	}
 }
 
