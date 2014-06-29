@@ -30,18 +30,30 @@
         <h2 class="form-signin-heading">Delivery Order</h2>
         Nomor Delivery Order :
         <label class="form-control"><?php echo $NO_DO;?></label>
+        <input type="hidden" name="NO_DO" value="<?php echo $NO_DO;?>">
         Tanggal Sewa :
         <label class="form-control"><?php echo $TGL_SEWA;?></label>
+        <input type="hidden" name="TGL_SEWA" value="<?php echo $TGL_SEWA;?>">
         Tanggal Kirim :
         <label class="form-control"><?php echo $TGL_KIRIM;?></label>
+        <input type="hidden" name="TGL_KIRIM" value="<?php echo $TGL_KIRIM;?>">
         Mata Uang :
         <label class="form-control"><?php echo $MATA_UANG;?></label><br/>
+        <input type="hidden" name="MATA_UANG" value="<?php echo $MATA_UANG;?>">
+        <?php if(!$cabang){?>
+        <h2 class="form-signin-heading">Belum ada cabang!</h2>
+        <button type="button" class="btn btn-lg btn-primary btn-block">Tambah Cabang</button>      
+        <?php }else{?>
+        <h4 class="form-signin-heading" style="text-align:center;">Kurang cabang???</h4>
+        <button type="button" class="btn btn-lg btn-primary" style="margin-left:21%;">Tambah Cabang</button>
         <h2 class="form-signin-heading">Detail Delivery Order</h2>
+        <?php }?>
       </form>
 
       <form role="form" method="POST" action="#">
         <div id="cabang">
         </div>
+        <?php if($cabang){?>
         <table class="table table-hover table-bordered">
           <thead>
             <tr>
@@ -71,6 +83,7 @@
           </tbody>
         </table>
         <button type="button" class="btn btn-lg btn-primary" style="position:absolute;left:45%;width:10%;">Lanjut</button><br/><br/>
+        <?php }?>
       </form> 
     </div> <!-- /container -->
   </body>

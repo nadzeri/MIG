@@ -17,9 +17,11 @@ class DeliveryOrder extends CI_Controller {
 		$data['TGL_SEWA'] = $this->input->get('TGL_SEWA');
 		$data['TGL_KIRIM'] = $this->input->get('TGL_KIRIM');
 		$data['MATA_UANG'] = $this->input->get('MATA_UANG');
-		//$this->deliveryorder_model->tambah($data);
 		$data['cabang'] = $this->input->get('cabang');
-		$this->load->view('deliveryorder/detaildeliveryorder',$data);
+		if(!$data['NO_DO'] || !$data['TGL_SEWA'] || !$data['TGL_KIRIM'] || !$data['MATA_UANG'])
+			$this->index();
+		else
+			$this->load->view('deliveryorder/detaildeliveryorder',$data);
 	}
 }
 
