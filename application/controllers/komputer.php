@@ -18,7 +18,7 @@ class Komputer extends CI_Controller {
 	public function tambahKomputer()
 		{
 			$data['data'] =  $this->komputer_model->get_spesifikasi();
-			$this->load->view('komputer/tambahKomputer',$data);
+			$this->load->view('komputer/tambahKomputer2',$data);
 
 		}
 	public function tambahSpesifikasi()
