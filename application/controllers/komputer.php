@@ -12,14 +12,21 @@ class Komputer extends CI_Controller {
 	public function index($success = false)
 		{
 			$data['success'] = $success;
-			$this->load->view('komputer/tambahSpesifikasi',$data);
+			$this->load->view('komputer/tambahKomputer',$data);
 		}
 
 	public function tambahKomputer()
 		{
 			$data['data'] =  $this->komputer_model->get_spesifikasi();
-			$this->load->view('komputer/tambahKomputer2',$data);
+			$this->load->view('komputer/tambahKomputer',$data);
 
+		}
+	public function tahap1()
+		{
+			$data['No_Komputer'] = $this->input->post('No_Komputer');
+			$data['Jumlah'] = $this->input->post('Jumlah');
+			$data = $this->komputer_model->tahap1($data);
+			echo $data['Type'];
 		}
 	public function tambahSpesifikasi()
 		{

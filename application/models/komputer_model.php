@@ -17,4 +17,9 @@
 			$query = $this->db->get('spesifikasi');
 			return $query->result();
 		}
+		public function tahap1($data)
+		{
+			$query = $this->db->get_where('spesifikasi',  array('No_Komputer' => $data['No_Komputer'] ));
+			return $query->result();
+		}
 	}
