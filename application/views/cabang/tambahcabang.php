@@ -53,23 +53,12 @@
   </head>
   <body>
     <div class="container">
-      <form class="form-signin" method="POST" action="<?= base_url()?>deliveryOrder/tambahDeliveryOrder">
-        <h2 class="form-signin-heading">Delivery Order</h2>
-        Nomor Delivery Order :
-        <input type="text" class="form-control" placeholder="Nomer Delivery Order" name="NO_DO">
-        Tanggal Sewa :
-        <input type="date" class="form-control" placeholder="Tanggal Sewa" name="TGL_SEWA">
-        Tanggal Kirim :
-        <input type="date" class="form-control" placeholder="Tanggal Kirim" name="TGL_KIRIM">
-        Mata Uang :
-        <select class="form-control" name="MATA_UANG">
-          <option value="">--- Pilih Mata Uang ---</option>
-          <option value="Rupiah">Rupiah</option>
-          <option value="Dollar">Dollar</option>
-        </select><br>
-        <button class="btn btn-lg btn-primary btn-block">Lanjut</button>
-        <div id="cabang">
-        </div>
+      <form class="form-signin" method="POST" action="<?= base_url()?>cabang/insertcabang">
+        <h2 class="form-signin-heading">Tambah Cabang</h2>
+        Nama Cabang :
+        <input type="text" class="form-control" placeholder="Nama Cabang" name="Nama_Cabang">
+        <br>
+        <button class="btn btn-lg btn-primary btn-block">Simpan</button>
       </form>
     </div> <!-- /container -->
   </body>
