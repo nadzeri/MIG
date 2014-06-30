@@ -16,7 +16,9 @@
     <link href="<?php echo base_url();?>assets/templates/css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
     <link href="<?php echo base_url();?>assets/templates/css/plugins/timeline/timeline.css" rel="stylesheet">
 
-
+    <!-- Page-Level Plugin CSS - Tables -->
+    <link href="<?php echo base_url();?>assets/templates/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+    
     <!-- SB Admin CSS - Include with every page -->
     <link href="<?php echo base_url();?>assets/templates/css/sb-admin.css" rel="stylesheet">
 

@@ -10,7 +10,6 @@ class Admin extends CI_Controller{
 	public function deliveryorder(){
 		$this->load->view('header/adminHeader');
 		$this->load->view('admin/deliveryorder/deliveryOrder');
-		$this->load->view('admin/deliveryorder/detailDeliveryOrder');
 		$this->load->view('footer/adminFooter');
 	}
 
