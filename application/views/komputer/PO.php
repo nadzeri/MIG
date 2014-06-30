@@ -25,8 +25,8 @@
 		}
 		function detail(Merk){
 			//alert("<?php foreach ($spesifikasi as $row) {echo $row->Merk;}?> ");
-			var Merk = Merk;
-			alert("<?php if (==1) echo 'hai'; ?>");
+			//var Merk = Merk;
+			var data['<?php  ?>']
 		}
 	</script>
 </head>
