@@ -1,6 +1,14 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class Admin extends CI_Controller{
 
+	public function __construct()
+	{
+		parent::__construct();
+		session_start();
+		$this->load->model('deliveryorder_model');
+		$this->load->model('cabang_model');
+	}
+
 	public function home(){
 		$this->load->view('header/adminHeader');
 		$this->load->view('admin/Home');
@@ -24,6 +32,21 @@ class Admin extends CI_Controller{
 			$this->deliveryorder_model->do_insert($data);
 		}
 		$this->detaildeliveryorder();
+	}
+
+	public function detaildeliveryorder()
+	{
+		$row = $this->deliveryorder_model->lastDO();
+		$row1 = $this->cabang_model->do_select();
+		foreach ($row as $result) 
+		{
+			$data['NO_DO'] = $result->NO_DO;
+			$data['TGL_SEWA'] = $result->TGL_SEWA;
+			$data['TGL_KIRIM'] = $result->TGL_KIRIM;
+			$data['MATA_UANG'] = $result->MATA_UANG;
+		}
+		$data['cabang'] = $row1;
+		$this->load->view('deliveryorder/detaildeliveryorder',$data);
 	}
 
 
