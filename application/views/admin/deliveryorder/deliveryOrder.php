@@ -44,7 +44,13 @@
       }
   </script>
       <form class="form-signin" method="POST" action="<?= base_url()?>admin/tambahDeliveryOrder">
-        <h2 class="form-signin-heading">Delivery Order</h2>
+        <div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">Delivery Order</h1>
+			</div>
+			<!-- /.col-lg-12 -->
+        </div>
+	<div class="row">
         Nomor Delivery Order :
         <input type="text" class="form-control" placeholder="Nomer Delivery Order" name="NO_DO">
         Tanggal Sewa :
@@ -94,42 +100,42 @@
       }
     </script>
 
-      <form method="POST" action="#">
-        <div id="cabang">
-        </div>
-        <table class="table table-hover table-bordered">
-          <thead id="thead">
-            <tr>
-              <!--th colspan="2">Cabang <button type="button" onclick="addInputCabang();" ><img src='<?= base_url()?>assets/gambar/addIcon.png' height='15px'></button></th-->
-              <th colspan="2">Cabang <button type="button" data-toggle="modal" data-target="#myModal"><img src='<?= base_url()?>assets/gambar/addIcon.png' height='15px'></button></th>
-              <th>User/Bagian</th>
-              <th>Jumlah</th>
-              <th>PIC</th>
-              <th>Keterangan</th>
-            </tr>
-          </thead>
-        </table>
-        <button type="button" class="btn btn-lg btn-primary" style="position:absolute;left:45%;width:10%;">Udahin aje</button><br/><br/>
-      </form> 
+			  <form method="POST" action="#">
+				<div id="cabang">
+				</div>
+				<table class="table table-hover table-bordered">
+				  <thead id="thead">
+					<tr>
+					  <!--th colspan="2">Cabang <button type="button" onclick="addInputCabang();" ><img src='<?= base_url()?>assets/gambar/addIcon.png' height='15px'></button></th-->
+					  <th colspan="2">Cabang <button type="button" data-toggle="modal" data-target="#myModal"><img src='<?= base_url()?>assets/gambar/addIcon.png' height='15px'></button></th>
+					  <th>User/Bagian</th>
+					  <th>Jumlah</th>
+					  <th>PIC</th>
+					  <th>Keterangan</th>
+					</tr>
+				  </thead>
+				</table>
+				<button type="button" class="btn btn-lg btn-primary" style="position:absolute;left:45%;width:10%;">Udahin aje</button><br/><br/>
+			  </form> 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Daftar Cabang</h4>
-      </div>
-      <div class="modal-body">
-        <a onclick="">
-          
-        </a>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title" id="myModalLabel">Daftar Cabang</h4>
+				  </div>
+				  <div class="modal-body">
+					<a onclick="">
+					  
+					</a>
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		</div>
     </div>
