@@ -266,7 +266,7 @@
                             <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="../admin/deliveryorder"><i class="fa fa-edit fa-fw"></i>Delivery Order</a>
+                            <a href="../admin/deliveryorder"><i class="fa fa-edit fa-fw"></i> Delivery Order</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
