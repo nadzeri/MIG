@@ -28,6 +28,13 @@ class Komputer extends CI_Controller {
 			$data = $this->komputer_model->tahap1($data);
 			echo $data['Type'];
 		}
+
+	public function PO()
+		{
+			$spesifikasi['spesifikasi'] = $this->komputer_model->get_spesifikasi(); 
+			$this->load->view('komputer/PO',$spesifikasi);
+		}
+
 	public function tambahSpesifikasi()
 		{
 
