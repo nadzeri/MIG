@@ -14,7 +14,11 @@
 | path to your installation.
 |
 */
+
 $config['base_url']	= 'http://localhost/MIG/index.php';
+
+$config['base_url']	= '';
+
 
 /*
 |--------------------------------------------------------------------------

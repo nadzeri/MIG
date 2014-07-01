@@ -10,4 +10,12 @@
 		{
 			return $this->db->insert('cabang', $data);
 		}
+<<<<<<< HEAD
+=======
+		public function do_select()
+		{
+			$query = $this->db->get('cabang');
+			return $query->result();
+		}
+>>>>>>> origin/master
 	}
