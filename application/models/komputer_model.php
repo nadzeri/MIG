@@ -12,9 +12,9 @@
 			$this->db->insert('spesifikasi',$data);
 		}
 
-		public function get_spesifikasi()
+		public function get_spesifikasi($id)
 		{
-			$query = $this->db->get('spesifikasi');
+			$query = $this->db->get_where('spesifikasi', array('Merk' =>  $id));
 			return $query->result();
 		}
 		public function tahap1($data)

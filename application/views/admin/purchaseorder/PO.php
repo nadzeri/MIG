@@ -1,154 +1,157 @@
 <head>
+	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/templates/css/bootstrap.min.css">
 	<script type="text/javascript">
-		function pilih(chosen){
-
+		function pilih (chosen){
 			if (chosen == 1){
- 			document.getElementById('PC').style.visibility = "visible";
- 			document.getElementById('DLL').style.visibility = "hidden";
- 			document.getElementById('Monitor').style.visibility = "visible";
- 			}
- 			else if (chosen == 2){
- 			document.getElementById('PC').style.visibility = "hidden";
- 			document.getElementById('DLL').style.visibility = "hidden";
- 			document.getElementById('Monitor').style.visibility = "visible";
- 			}
- 			else if (chosen == 3){
- 			document.getElementById('PC').style.visibility = "visible";
- 			document.getElementById('DLL').style.visibility = "hidden";
- 			document.getElementById('Monitor').style.visibility = "hidden";
- 			}
- 			else if (chosen == 4){
- 			document.getElementById('PC').style.visibility = "hidden";
- 			document.getElementById('DLL').style.visibility = "visible";
- 			document.getElementById('Monitor').style.visibility = "hidden";
- 			}
+				document.getElementById('CPU').style.visibility = "visible";
+ 				document.getElementById('DLL').style.visibility = "hidden";
+ 				document.getElementById('Monitor').style.visibility = "visible";
+ 				document.getElementById('CPU').style.margin = "0";
+ 				document.getElementById('DLL').style.margin = "0";
+ 				document.getElementById('Monitor').style.margin = "0";
+
+			}
+			else if (chosen == 2){
+				document.getElementById('CPU').style.visibility = "visible";
+				document.getElementById('Monitor').style.visibility = "hidden";
+				document.getElementById('DLL').style.visibility = "hidden";
+				document.getElementById('CPU').style.margin = "0";
+ 				document.getElementById('DLL').style.margin = "0";
+ 				document.getElementById('Monitor').style.margin = "0";
+			}
+			else if (chosen == 3){
+				document.getElementById('CPU').style.visibility = "hidden";
+				document.getElementById('Monitor').style.visibility = "visible";
+				document.getElementById('Monitor').style.margin = "-45px 0 0 0";
+				document.getElementById('DLL').style.visibility = "hidden";
+				document.getElementById('CPU').style.margin = "0";
+ 				document.getElementById('DLL').style.margin = "0";
+ 				
+			}
+			else if (chosen == 4){
+				document.getElementById('CPU').style.visibility = "hidden";
+				document.getElementById('Monitor').style.visibility = "hidden";
+				document.getElementById('DLL').style.visibility = "visible";
+				document.getElementById('DLL').style.margin = "-90px 0 0 0";
+				document.getElementById('CPU').style.margin = "0";
+ 				document.getElementById('Monitor').style.margin = "0";
+			}
 		}
-		function detail(Merk){
-			//alert("<?php foreach ($spesifikasi as $row) {echo $row->Merk;}?> ");
-			//var Merk = Merk;
-			var data['<?php  ?>']
-		}
 	</script>
-</head>
+</head>	
 
-<form name = "PO">  
-	<label>tanggal</label>
-	<input type = "date" name = "tanggal">
-	<label>Vendor</label>
-	<input type = "text" name = "vendor">
-	<label>Nomor PO</label>
-	<input type = "text" name = "nomorPO">
-	<label>Jenis</label>
-	<select name = "jenis" onchange="pilih(document.PO.jenis.options[ document.PO.jenis.selectedIndex].value);">
-		<option value = "0" >-----</option>
-		<option value = "1" >Personal Computer</option>
-		<option value = "2" >Monitor</option>
-		<option value = "3" >CPU</option>
-		<option value = "4" >DLL</option>
-	</select>
-	<label>Prihal</label>
-	<input type = "textarea" name = "prihal">
-	<label>Harga</label>
-	<input type = "textarea" name = "harga">
-	<label>Garansi</label>
-	<input type = "textarea" name = "garansi">
-	<select id = "PC" style = "visibility : hidden;" onchange="detail(this.value);">
-		<?php 
-			foreach ($spesifikasi as $row) {
-			echo "<option value = \"$row->Merk\" > ". $row->Merk ."</option>";
+<div class = "panel panel-default">
+	<div class="panel-body">
+		<h3 align="center"><b>Purchase Order</b></h3></br>
+		<form enctype="multipart/form-data" method="POST" action="create" name = "PO">
+		<div class="form-group">
+			<label class="control-label">Tanggal PO</label>
+			<div class="controls">
+				<input class="form-control" type="date" name="">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label">Vendor</label>
+			<div class="controls">
+				<input class="form-control" type="text" name="">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label">Nomor PO</label>
+			<div class="controls">
+				<input class="form-control" type="text" name="">
+				<input class="form-control" type="text" name="">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label">Jenis Pembelian</label>
+			<div class="controls">
+				<select name = "jenis" onchange="pilih(document.PO.jenis.options[document.PO.jenis.selectedIndex].value);">
+					<option >-----</option>
+					<option value = "1">PC</option>
+					<option value = "2">CPU</option>
+					<option value = "3">Monitor</option>
+					<option value = "4">Dan Lain- Lain</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label">Jumlah Unit</label>
+			<div class="controls">
+				<input class="form-control" type="text" name="">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label">Perihal</label>
+			<div class="controls">
+				<input class="form-control" type="textarea" name="">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label">Jumlah Unit</label>
+			<div class="controls">
+				<select>
+					<option>RP</option>
+					<option>USD</option>
+				</select>
+				<input class="form-control" type="text" name="">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label">Garansi</label>
+			<div class="controls">
+				<select>
+					<option>1 tahun</option>
+					<option>2 tahun</option>
+					<option>3 tahun</option>
+				</select>
+			</div>
+		</div>
 
-			};
+		<div class="form-group" id = "CPU" style = "visibility : hidden;">
+			<label class="control-label">CPU</label>
+			<div class="controls">
+				<select id = "CPUS">
+					<option value = "Asus">Asus</option>
+					<option value = "Acer">Acer</option>
+				</select>
+				<input type = "button" id = 'buttons' value = "configure">
+			</div>
+		</div>
+		<div class="form-group" id = "Monitor" style = "visibility : hidden;">
+			<label class="control-label">Monitor</label>
+			<div class="controls">
+				<select>
+					<option>Asus</option>
+					<option>USD</option>
+				</select>
 
-		?>
-		<!--input id = "tombol" style = "visibility:hidden;" type = 'button' value = 'detail' onclick = "detail();"-->
-	</select>
-	<select id = "Monitor" style = "visibility : hidden;">
-		<?php 
-			foreach ($spesifikasi as $row) {
-			echo "<option value = <?php ?> > ". $row->Type ."</option>";
-			};
-		?>
-	</select>
-	<select id = "DLL" style = "visibility : hidden;">
-		<option>VGA</option>
-		<option>RAM</option>
-	</select>
-</form>
+			</div>
+		</div>
+		<div class="form-group" id = "DLL" style = "visibility : hidden;">
+			<label class="control-label">DLL</label>
+			<div class="controls">
+				<select>
+					<option>RP</option>
+					<option>USD</option>
+				</select>
+			</div>
+		</div>
+		</form>
+		<div id = "ajaxDiv"></div>
+	</div>
+</div>
 
-<!--head>
-	<script type="text/javascript">
-		function setOptions(chosen) {
-var selbox = document.myform.opttwo;
- 
- if (chosen == 1){
- 		document.getElementById('myDiv').style.visibility = "visible";
- }
- else if (chosen == 2){
- 	document.getElementById('myDiv').style.visibility = "hidden";
- }
-}
-	</script>
-</head>
 
-<form name="myform"><div class="centre">
-<select name="optone" size="1"
-onchange="setOptions(document.myform.optone.options[ document.myform.optone.selectedIndex].value);">
-<option value=" " selected="selected"> </option>
-<option value="1">First Choice</option>
-<option value="2">Second Choice</option>
-<option value="3">Third Choice</option>
-</select><br /> <br />
-<div id="myDiv" style = " visibility : hidden">jajaj</div>
-<input type="button" name="go" value="Value Selected"
-onclick="alert(document.myform.opttwo.options[ document.myform.opttwo.selectedIndex].value);">
-</div></form-->
 
-<!--head>
-	<script type="text/javascript">
-  
 
-	function deleteElement(){
-		var ni = document.getElementById('my1Div');
-		ni.innerHTML = "jaja";
-	}
-	</script>
-</head>
-
-<input type="hidden" value="0" id="theValue" />
-
-<p><a href="javascript:;" onclick="addElement();">Add Some Elements</a></p>
-<p onclick="deleteElement();">hapus</p>
-
-<-div id="myDiv"> </div>
-
-<head>
-	<script type="text/javascript">
-		function addPaket() {
-
-	  var ni = document.getElementById('myDiv');
-
-	  var numi = document.getElementById('theValue');
-
-	  var num = (document.getElementById('theValue').value -1)+ 2;
-
-	  numi.value = num;
-
-	  var newdiv = document.createElement('input');
-
-	  var divIdName = 'my'+num+'Div';
-
-	  newdiv.setAttribute('id',divIdName);
-
-	  newdiv.innerHTML = 'Element Number '+num+' has been added! <a href=\'#\' onclick=\'removeElement('+divIdName+')\'>Remove the div "'+divIdName+'"</a>';
-
-	  ni.appendChild(newdiv);
-
-}
-	</script>
-</head>
-<p><a href="javascript:;" onclick="addElement();">Add Some Elements</a></p>
-<input type = "button" onclick = "addPaket();" style = "height: 30px; width : 30px; background-color:red;">paket</input>
-<input type = "button" onclick = "addsatuan();" style = "height: 30px; width : 30px; background-color:red;">satuan</input>
-
-<div id="myDiv"> </div>
-<div id="satuan"> </div-->
+<script src = "http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$('input#buttons').on('click', function(){
+			var id = $('select#CPUS').val();
+			$.post('<?php echo base_url("admin/POspesifikasi"); ?>', {id : id}, function(data){
+				alert(data);
+				
+			});
+	});
+</script>

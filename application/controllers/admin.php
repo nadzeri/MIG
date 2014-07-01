@@ -51,6 +51,17 @@ class Admin extends CI_Controller{
 		$this->load->view('deliveryorder/detaildeliveryorder',$data);
 	}
 
+	public function purchaseorder()
+	{
+		$this->load->view('admin/purchaseorder/PO');
+	}
 
+	public function POspesifikasi()
+	{
+		$data =  $this->komputer_model->get_spesifikasi($_POST['id']);
+		foreach ($data as $row) {
+			echo $row['Merk'];
+		}
+	}
 
 }
