@@ -16,8 +16,10 @@ class Admin extends CI_Controller{
 	}
 
 	public function deliveryorder(){
+		$row = $this->cabang_model->do_select();
+		$data['cabang'] = $row;
 		$this->load->view('header/adminHeader');
-		$this->load->view('admin/deliveryorder/deliveryOrder');
+		$this->load->view('admin/deliveryorder/deliveryOrder',$data);
 		$this->load->view('footer/adminFooter');
 	}
 

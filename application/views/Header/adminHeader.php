@@ -15,11 +15,46 @@
     <!-- Page-Level Plugin CSS - Dashboard -->
     <link href="<?php echo base_url();?>assets/templates/css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
     <link href="<?php echo base_url();?>assets/templates/css/plugins/timeline/timeline.css" rel="stylesheet">
+    
+    <!-- Core Scripts - Include with every page -->
+    <script src="<?php echo base_url();?>assets/templates/js/jquery-1.10.2.js"></script>
+    <script src="<?php echo base_url();?>assets/templates/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url();?>assets/templates/js/plugins/metisMenu/jquery.metisMenu.js"></script>
 
+    <!-- Page-Level Plugin Scripts - Dashboard -->
+    <script src="<?php echo base_url();?>assets/templates/js/plugins/morris/raphael-2.1.0.min.js"></script>
+    <script src="<?php echo base_url();?>assets/templates/js/plugins/morris/morris.js"></script>
 
+    <!-- SB Admin Scripts - Include with every page -->
+    <script src="<?php echo base_url();?>assets/templates/js/sb-admin.js"></script>
+
+    <!-- Page-Level Demo Scripts - Dashboard - Use for reference -->
+    <script src="<?php echo base_url();?>assets/templates/js/demo/dashboard-demo.js"></script>
+
+    <!-- Page-Level Plugin CSS - Tables -->
+    <link href="<?php echo base_url();?>assets/templates/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+    
     <!-- SB Admin CSS - Include with every page -->
     <link href="<?php echo base_url();?>assets/templates/css/sb-admin.css" rel="stylesheet">
+    <script src="<?php echo base_url();?>assets/templates/js/jquery-1.10.2.js"></script>
+    
+    <!-- Core Scripts - Include with every page -->
+    <script src="<?php echo base_url();?>assets/templates/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url();?>assets/templates/js/plugins/metisMenu/jquery.metisMenu.js"></script>
 
+    <!-- Page-Level Plugin Scripts - Tables -->
+    <script src="<?php echo base_url();?>assets/templates/js/plugins/dataTables/jquery.dataTables.js"></script>
+    <script src="<?php echo base_url();?>assets/templates/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+
+    <!-- SB Admin Scripts - Include with every page -->
+    <script src="<?php echo base_url();?>assets/templates/js/sb-admin.js"></script>
+
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+    $(document).ready(function() {
+        $('#dataTables-example').dataTable();
+    });
+    </script>
 </head>
 
 <body>
@@ -34,7 +69,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">MIG - SYS</a>
+                <a class="navbar-brand" href="<?php echo base_url();?>admin/home">MIG - SYS</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -263,7 +298,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="<?php echo base_url();?>admin/home"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="../admin/deliveryorder"><i class="fa fa-edit fa-fw"></i> Delivery Order</a>
