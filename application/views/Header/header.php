@@ -12,7 +12,6 @@
 	<link type="text/css" rel = "stylesheet" href="<?php echo base_url()?>assets/templates/css/bootstrap-theme.min.css"></link>
 	<link type="text/css" rel = "stylesheet" href="<?php echo base_url()?>assets/templates/js/bootstrap.js"></link> 
 	<link type="text/css" rel = "stylesheet" href="<?php echo base_url()?>assets/style.css"></link>
-a
 </head>
 
 <body style = "background-color: #EEE9E9;">
