@@ -45,30 +45,27 @@
                         <h3 class="panel-title">Please Sign In</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form">
+                        <!-- <form role="form"> -->
                             <fieldset>
+                                <?php echo validation_errors(); ?>
+                                <?php echo form_open('user'); ?>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                                    <input type="text" name="username" placeholder="Username" value="<?php echo set_value('username'); ?>" class="form-control" autofocus/>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
-                                    </label>
+                                    <input type="password" name="password" placeholder="Password" value="" class="form-control" autofocus/>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <a href="index.html" class="btn btn-lg btn-success btn-block">Login</a>
-                            </fieldset>
-                        </form>
+                                <div><input class="btn btn-lg btn-success btn-block" type="submit" value="Login" /></div>
+                            </form>
+                        </fieldset>
                     </div>
                 </div>
                 <a href="admin/home">GO TO ADMIN</a>
             </div>
         </div>
 
-        </div> <!-- /container -->
+        </div> 
     </div><!-- /ww -->
     
         <div id="footer">
