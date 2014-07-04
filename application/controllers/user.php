@@ -38,10 +38,7 @@ class User extends CI_Controller {
 
 			$typeValidation = $this->user_model->typeCheck($username, $password);
 			if($typeValidation == 'admin'){
-				$this->load->view('Header/adminHeader');
-				$this->load->view('admin/Home');
-				$this->load->view('Footer/adminFooter');
-				return TRUE;
+				redirect('/admin/home/', 'refresh');
 			}
 			else if ($typeValidation == 'maintenance') {
 				//$this->load->view('Header/maintenanceHeader');
