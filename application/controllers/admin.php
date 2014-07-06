@@ -64,4 +64,10 @@ class Admin extends CI_Controller{
 		}
 	}
 
+	public function addNewUser(){
+		$this->load->view('header/adminHeader');
+		$this->load->view('admin/addNewUser');
+		$this->load->view('footer/adminFooter');
+	}
+
 }

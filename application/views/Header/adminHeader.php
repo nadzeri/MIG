@@ -271,6 +271,8 @@
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
+                        <li><a href="/MIG/admin/addNewUser/"><i class="fa fa-user fa-fw"></i> Add User</a>
+                        </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
@@ -301,7 +303,7 @@
                             <a href="<?php echo base_url();?>admin/home"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="../admin/deliveryorder"><i class="fa fa-edit fa-fw"></i> Delivery Order</a>
+                            <a href="/MIG/admin/deliveryorder"><i class="fa fa-edit fa-fw"></i> Delivery Order</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
